@@ -50,6 +50,7 @@ public class Main {
 
                 timeCounter++;
                 if (timeCounter >= timeCounterThreshold){
+                    terminal.clearScreen();
                     timeCounter = 0;
 
                     addRandomFlakes(snowFlakes);
@@ -91,7 +92,6 @@ public class Main {
     }
 
     private static void printSnowFlakes(List<Flake> snowFlakes, Terminal terminal) throws IOException {
-        terminal.clearScreen();
         for (Flake flake : snowFlakes) {
             terminal.setCursorPosition(flake.getX(), flake.getY());
             terminal.putCharacter(flake.getSymbol());
